@@ -1,7 +1,6 @@
 #+eval=FALSE
 ##Import biogas data
 #previously was joined tables EKS with LfU through equal Biogasanlagen ID and saved 
-#in the sheet 4 of the excel file biogasanlagen_database.
 #1.- to call libraries
 library(sf)#to use sf data, import and export shp files
 library(tmap)#to render data as plot or view
