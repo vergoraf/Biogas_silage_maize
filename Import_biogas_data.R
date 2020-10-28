@@ -20,9 +20,9 @@ b_pl_years<-biogas_c%>%st_transform(32633)
 rm(biogas_c,biogas)
 #it is used the date betrieb from the unofficial database. It looks updated in compare to 
 #from LfU
-#as r data
+#4.- as r data
 save(b_pl_years, file = "rda/b_pl_years.rda")
-#6.- to check data through viewer
+#5.- to check data through viewer
 tmap_mode('view') 
 tm_shape(biogas_pl_years) +
   tm_dots(size=0.02,col="green")
