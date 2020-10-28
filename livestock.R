@@ -19,7 +19,6 @@ save(livestock.list,file = "rda/livestock.list.rda")
 #it merges list elements in one dataframe vector of 14 years.
 livestock_tot<-do.call("rbind",livestock.list)
 
-
 #3.-loading silage maize data
 load("rda/s_maize_post2007.rda")
 
@@ -82,13 +81,9 @@ for (i in 1:length(s_maize_post2007_aggr)){
   #livestock_BNR_ZD[[i]]<-livestock_BNR_ZD[[i]]%>%filter(Proportion >=50)
 }
 
-
-
-
 #7.- to establish working path and import biogas_data
 lst <- lapply(1:5, function(i) read_excel("Tables/Rinder_anzahl.xlsx", sheet = i))
 consumption_factor<- as.data.frame(lst[5])
-
 
 #8.- Consumption per cow
 #8.1.- define the livestock years
