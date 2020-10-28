@@ -5,8 +5,8 @@ Here it is presented the scripts that were used to calculate the likelihood of s
 ![Screenshot](R_steps.png)
 
 ## Steps
-1.- Calculation of the catchment area <br />
-1.1.- Import Biogas plants data. This dataset was previously processed, identifying biogas complex and filtering the biogas satellite plants. <br />
+* 1.- Calculation of the catchment area <br />
+* 1.1.- Import Biogas plants data. This dataset was previously processed, identifying biogas complex and filtering the biogas satellite plants. <br />
 Run Import_biogas_data.R <br />
 1.2.- Definition of the buffer through the radius <br />
 Run Defining_buffer.R <br />
