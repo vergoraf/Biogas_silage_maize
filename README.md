@@ -35,7 +35,7 @@ As a result, it is obtained the silage maize plots with the corresponding catchm
 2.  Calculation of the persistency score. <br />
 Run persistency.R 
 [Persistency](../persistency.R)
-
+[a relative link](persistency.R)
 3.  Calculation of the livestock score. <br />
 Run livestock.R 
 
