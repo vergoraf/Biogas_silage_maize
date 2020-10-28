@@ -11,4 +11,4 @@ Run Defining_buffer.R
 2.2.- Reclassification and Poligonization of results step 2.1; Dissolve of features with equal score 
 Run CA_Raster.R
 2.3.- 
-Run Intersect.R
+Run Intersect.Rr
