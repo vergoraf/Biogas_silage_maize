@@ -10,7 +10,7 @@ Run Import_biogas_data.R <br />
 1.2.- Definition of the buffer through the radius <br />
 Run Defining_buffer.R <br />
 Result is a point layer containing the biogas plants with a field indicating the radius for the catchment area. This is processed to calculate the euclidean distance (formula (d) in article) in Arcgis, using the toolbox Euclidean Distance BIogas presented in this repository. <br /> 
-The application in Arcgis is highly demanding. the first year can take 1 hour and a half and the last hour 5 hours, depending on the hardware capabilities. <br />
+The application in Arcgis is highly demanding. the first year can take 1 hour and a half and the last one 5 hours, depending on the hardware capabilities. <br />
 1.2.1.-First must be filtered the biogas plants for each year <br />
 1.2.2.- It is applied the toolbox Euclidean Distance BIogas, tool "Catchment area process" open as edit. <br />
 1.2.3.- <br />
