@@ -20,12 +20,10 @@ Parameters: <br />
         * Iterate by FID_1, which is the ID. <br />
         * Get field value: "r", which is the radius field. <br />
         * Output cell size: 90x90 <br />
-        * Region area vector: Brandenburg polygon layer 
-        
-        
+        * Region area vector: Brandenburg polygon layer <br />
 After getting the value of 1 year, it must be selected the next year from the biogas point layer and restart process until all the years were processed. It is recommended to delete all the preprocessing data and just leaving the final result saved as 2011, 2012,...,2018, before starting again. <br />
 Finally, it is obtained 11 Raster layers which are imported in the next step. <br />
-    * 1.3.- Reclassification and Poligonization of results step 2.1; Dissolve of features with equal score <br />
+    * 1.3.- Reclassification and Poligonization of results step 2.1; Dissolve of features with equal score 
 Run [CA_Raster](CA_Raster.R) <br />
     * 1.4.- Intersect values of catchment area with silage maize plots <br />
 Run [Intersect](Intersect.R) <br />
