@@ -26,5 +26,5 @@ Run livestock.R <br />
 Run Farm_size.R <br />
 5.- Final Score  <br />
 Run weighting_values.R <br />
-How it looks the procedure: <br />
+Example of the procedure: <br />
 ![Screenshot](Intern_Steps.png)
