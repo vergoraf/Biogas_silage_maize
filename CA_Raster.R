@@ -68,7 +68,7 @@ load("rda/d_Pol_WEC.rda")
 
 
 
-#5.- testing and plotting 
+#9.- testing and plotting 
 tmap_mode('view')
 tm_shape(d_Pol_WEC[[1]]) +
   tm_polygons("cat",palette="Reds")
