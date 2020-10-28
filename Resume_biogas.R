@@ -15,30 +15,7 @@ source("weighting_values.R")
 
 
 
----------
-source("Import_biogas_data.R")
-source("Defining_buffer.R")
-source("Intersect.R")
-source("livestock.R")
-source("persistency.R")
-source("Farm_size.R")
-source("weighting_values.R")
 
-# setwd("C:/Users/faver/Seafile/Berlin/GIS/ERP/Data&Protokoll")
-Path_3.1 <- "C:/Users/faver/Seafile/Berlin/GIS/ERP/Data&Protokoll"
-# setwd("C:/Users/faver/Seafile/Berlin/GIS/ERP")
-Path_3.2 <- "C:/Users/faver/Seafile/Berlin/GIS/ERP/"
-# setwd("C:/Users/faver/Seafile/Berlin/GIS/ERP")
-Path_3.3 <- "C:/Users/faver/Seafile/Berlin/GIS/ERP/"
-# setwd("C:/Users/faver/Seafile/Berlin/GIS/ERP")
-Path_3.4 <- "C:/Users/faver/Seafile/Berlin/GIS/ERP/"
-source("r_scripts/master_erp_data.R")
-setwd(Resume_path)
-
-# setwd("C:/Users/faver/Seafile/Berlin/GIS/ERP/")
-Path_4.1 <- "C:/Users/faver/Seafile/Berlin/GIS/ERP/"
-source("r_scripts/master_erp_data_all_06s.R")
-setwd(Resume_path)
 
 
 
