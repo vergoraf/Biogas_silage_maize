@@ -1,7 +1,8 @@
 # Here can be done all the process at once in
 # getting the values of the routes and their plotting
+#However it demands high hardware capabilities
 
-Resume_path <- "C://Users/faver/OneDrive - Humboldt-Universitaet zu Berlin, CMS/Master_thesis/Biogas"
+Resume_path <- "C://Users/.."#add personal file path
 
 
 source("Import_biogas_data.R")
