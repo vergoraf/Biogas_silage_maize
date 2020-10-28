@@ -11,7 +11,7 @@ Run Import_biogas_data.R <br />
     * 1.2.- Definition of the buffer through the radius <br />
 Run Defining_buffer.R <br />
 Result is a point layer containing the biogas plants with a field indicating the radius for the catchment area. This is processed to calculate the euclidean distance (formula (d) in article) in Arcgis, using the toolbox Euclidean Distance Biogas presented in this repository. <br /> 
-The application in Arcgis is highly demanding. the first year can take 1 hour and a half and the last one 5 hours, depending on the hardware capabilities. <br />
+The application in Arcgis is **highly demanding**. the first year can take 1 hour and a half and the last one 5 hours, depending on the hardware capabilities. <br />
       * 1.2.1.-First must be filtered the biogas plants for each year <br />
       * 1.2.2.- It is applied the toolbox "Euclidean Distance Biogas", tool "Catchment area process" open as edit. <br />
       * 1.2.3.- <br />
@@ -29,11 +29,17 @@ Run CA_Raster.R <br />
 Run Intersect.R <br />
 First, it is imported the silage maize plots from IACS layers. Therefore they were identified through their codes and organized according to their years.
 Secondly, it is imported the polygons froms step 2.2 and it is done the intersection. 
-As a result, it is obtained the silage maize plots with the corresponding catchment area score. <br />
+As a result, it is obtained the silage maize plots with the corresponding catchment area score. 
+
+
 2.  Calculation of the persistency score. <br />
-Run persistency.R <br />
+Run persistency.R 
+
+
 3.  Calculation of the livestock score. <br />
-Run livestock.R <br />
+Run livestock.R 
+
+
 4.  Calculation of the Farm size score. <br />
 Run Farm_size.R 
 
