@@ -3,7 +3,8 @@
 Here it is presented the scripts that were used to calculate the likelihood of silage maize for biogas production.
 
 ![Screenshot](R_steps.png)
-The steps are the following: <br />
+
+## Steps
 1.- Calculation of the catchment area <br />
 1.1.- Import Biogas plants data. This dataset was previously processed, identifying biogas complex and filtering the biogas satellite plants. <br />
 Run Import_biogas_data.R <br />
