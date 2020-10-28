@@ -38,7 +38,6 @@ for (i in 1:length(plots.list)) {
   size_farms_aggr[[i]]<-size_farms_aggr[[i]][,c("BNR_ZD","cat_size")]#select just The ID_owners and cat size
 }
 
-a<-size_farms_aggr[[2]]
 #to save data
 save(size_farms_aggr,file = "rda/size_farms_aggr.rda")
 #load("rda/size_farms_aggr.rda") #just if it is necessary,
