@@ -41,15 +41,15 @@ t<-1270 #tortuosity factor by km
 b_pl_years$r<- sqrt(b_pl_years$Q/(100*pi*b_pl_years$A*b_pl_years$Y))*t#radius column
 r<- sqrt(b_pl_years$Q/(100*pi*b_pl_years$A*b_pl_years$Y))*t
 
-#4.-Export data
+#7.-Export data
 #export the points which have to be represented as shp
 st_write(b_pl_years,ds="Spatial_Data/b_pl_years.shp",layer="b_pl_years.shp",
          driver="ESRI Shapefile",delete_layer=T)
 
-#7.-classifying data through temporal range
+#8.-classifying data through temporal range
 years<-list("2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018")
 
-#8.-creating buffers list
+#9.-creating buffers list
 buffer<-b_pl_years%>%
   st_buffer(dist=r,joinStyle="ROUND",endCapStyle= "ROUND")
 buffer.list<-list()
@@ -60,10 +60,10 @@ for (i in 1:length(years)){
   buffer.list[[i]]<-st_as_sf(buffer.list[[i]])
 }
 
-#9.- as r data
+#10.- as r data
 save(buffer.list, file = "rda/buffer_list.rda")
 
-#10.- to check data through viewer
+#11.- to check data through viewer
 tmap_mode('view') 
 tm_shape(buffer.list[[2]]) +
   tm_polygons(col="green")
