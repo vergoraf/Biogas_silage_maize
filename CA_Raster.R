@@ -1,14 +1,19 @@
-#+eval=FALSE
-##year classification
-#1.- to call libraries
-library(sf)#to use sf data
-library(lubridate) # to modify time data
-library(dplyr)# to select and modify columns
+###############################################################################
+# Creating random data and a correlated response                              # 
+# Author, 2020                                                                # 
+###############################################################################
+# year classification
+###############################################################################
+# 1. Call needed packages 
+library(sf)
+library(lubridate)
+library(dplyr)
 library(GISTools)
-library(raster)# to manage raster data
+library(raster)
 library(rgeos)
 library(tmap)
-#2.-Establish breaks and scores for catchment area
+###############################################################################
+# 2. Establish breaks and scores for catchment area
 n<-seq(0.025,1,by=0.05)
 max(n)
 feed.in_l<-c(-Inf,0,0,n[1],n[2],5,n[2],n[3],10,
@@ -21,38 +26,49 @@ feed.in_l<-c(-Inf,0,0,n[1],n[2],5,n[2],n[3],10,
              n[15],n[16],75,n[16],n[17],80,
              n[17],n[18],85,n[18],n[19],90,
              n[19],n[20],95,n[20],Inf,100)
-#3.-importing raster weighted energy capacity rasters
+###############################################################################
+# 3. Load catchment area rasters
 setwd("Raster")
-years<-list("2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018")
-raster.list<-list()
-feed.inre<-list() 
+years <- list("2008",
+              "2009",
+              "2010",
+              "2011",
+              "2012",
+              "2013",
+              "2014",
+              "2015",
+              "2016",
+              "2017",
+              "2018")
+raster.list <- list()
+feed.inre <- list() 
+# create list with catchment area rasters created in ArcGIS
 for (i in 1:length(years)){
   raster.list[[i]]<-raster(paste0(years[[i]],".tif"))
   raster.list[[i]]@data@names<-""
   feed.inre[[i]]<-reclassify(raster.list[[i]],feed.in_l)
 }
-
-#4.- Saving Reclassification
+###############################################################################
+# 4. Save Reclassification
 setwd("..")
 save(feed.inre, file = "rda/reclas_raster.rda")
-
-
-#5.-Rasters to polygons
+###############################################################################
+# 5. Rasters to polygons
 poly_WEC<-list()
 Pol_WEC_sf<-list()
+# Transform Raster to polygons and save them in a list
 for(i in 1:length(feed.inre)){
   poly_WEC[[i]]<-rasterToPolygons(feed.inre[[i]],dissolve=T)
   Pol_WEC_sf[[i]]<-st_as_sf(poly_WEC[[i]])
   Pol_WEC_sf[[i]]$layer<-as.integer(Pol_WEC_sf[[i]]$layer)
 }
-
-#6.-saving the data as backup
+###############################################################################
+#6. Save the data as backup
 save(Pol_WEC_sf, file = "rda/Pol_WEC_sf.rda")
-
-
-#7.- joining every new polygon to one polygon by score
-#after conversion appeared 1000 more polygons of score 80, so here they are 
-#joined to be again just one polygon for each score.
+###############################################################################
+# 7. Join every new polygon to one polygon by score.
+# After the conversion 1000 more polygons of score 80 appeared, thus here 
+# they are joined again to just have one polygon for each score.
 n<-seq(0,100,by=5)
 d_Pol_WEC<-list()
 dis_Pol_WEC<-list()
@@ -62,17 +78,17 @@ for (j in 1:length(feed.inre)){for(i in 1:length(n)){
   d_Pol_WEC[[j]]<-do.call("rbind",dis_Pol_WEC)
   d_Pol_WEC[[j]]<-st_as_sf(d_Pol_WEC[[j]])
 }}
-#8.- Saving polygons
+###############################################################################
+# 8. Save polygons
 save(d_Pol_WEC, file = "rda/d_Pol_WEC.rda")
 load("rda/d_Pol_WEC.rda")
-
-
-
-#9.- testing and plotting 
+###############################################################################
+# 9. Testing and plotting 
 tmap_mode('view')
 tm_shape(d_Pol_WEC[[1]]) +
   tm_polygons("cat",palette="Reds")
-#5.- testing and plotting 
+###############################################################################
+# 10. Testing and plotting 
 tmap_mode('view')
 tm_shape(feed.inre[[1]]) +
   tm_raster("layer",palette="Reds")+tm_shape(feed.inre[[11]]) +
