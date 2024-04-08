@@ -36,7 +36,7 @@ save(b_pl_years,
 ###############################################################################
 # 5. - Check data with viewer
 tmap_mode("view") 
-tm_shape(biogas_pl_years) +
+tm_shape(b_pl_years) +
   tm_dots(size=0.02,col="green")
 # close viewer
 tmap_mode("plot")
