@@ -150,7 +150,7 @@ save(pers_table,
 # 12. Calculation by the exponential growth based on natural value.
 cat_pers_values<-pers_table
 for(i in 1:length(pers_table)){
-  cat_pers_values[[i]]$cat_pers <- 100*round(1*(1-exp(-cat_pers_values[[i]]$TOTAL)),2) 
+  cat_pers_values[[i]]$cat_pers <- 100*round((1-exp(-cat_pers_values[[i]]$TOTAL)),2) 
   # select just the necessary columns
   cat_pers_values[[i]] <- cat_pers_values[[i]][,c("FLIK_SC",
                                                   "cat_pers")]
